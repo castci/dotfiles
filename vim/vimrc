@@ -1,0 +1,125 @@
+" General
+set nocompatible    " be iMproved, requireset laststatus=2
+set laststatus=2
+set relativenumber  " Show line numbers
+set number
+set nowrap          " No wrapping
+set showmatch       " Highlight matching brace
+set visualbell      " Use visual bell (no beeping)
+set hlsearch        " Highlight all search results
+set smartcase       " Enable smart-case search
+set incsearch       " Searches for strings incrementally
+set autoindent      " Auto-indent new lines
+set expandtab       " Use spaces instead of tabs
+set shiftwidth=4    " Number of auto-indent spaces
+set smartindent     " Enable smart-indent
+set smarttab        " Enable smart-tabs
+set softtabstop=4   " Number of spaces per Tab
+set undolevels=1000 " Number of undo leves
+
+"Go to de line with enter
+nmap <CR> G
+
+"Comment with leader
+map <leader>cc <c-_><c-_>
+map <leader>cp <c-_>p
+
+"For Snippets
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['javascript'] = 'javascript, javascript-mocha'
+imap ss <esc>a<Plug>snipMateNextOrTrigger
+smap ss <Plug>snipMateNextOrTrigger
+
+"Move lines
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+" setup for fzf
+set rtp+=/usr/local/opt/fzf
+
+"" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"" Plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'dracula/vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'pair://github.com/jiangmiao/auto-pairs.git'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'rking/ag.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+call vundle#end()
+filetype plugin indent on
+
+syntax on         " Syntax highlight
+color dracula     " Select color theme
+
+"this is for airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1
+
+"This is for multiple select search
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+
+"This is for nerd tree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+autocmd StdinReadPre * let s:std_in=1
+nnoremap <silent> <C-t> :call NERDTreeToggleInCurDir()<CR>
+function! NERDTreeToggleInCurDir()
+    " If NERDTree is open in the current buffer
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        NERDTreeToggle
+    else
+        NERDTreeFind
+    endif
+endfunction
+
+"FZF
+nnoremap <C-f> :FZF<CR>
+
+"mapping buffers
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+"ag
+if executable('ag') 
+    " Note we extract the column as well as the file and line number
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+    nnoremap ff :Ag<SPACE>
+endif
+
+"You Complete Me
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
