@@ -1,4 +1,5 @@
 " General
+set shell="/usr/local/bin/fish"
 set nocompatible    " be iMproved, requireset laststatus=2
 set laststatus=2
 set relativenumber  " Show line numbers
