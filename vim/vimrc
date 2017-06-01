@@ -1,5 +1,4 @@
 " General
-set shell="/usr/local/bin/fish"
 set nocompatible    " be iMproved, requireset laststatus=2
 set laststatus=2
 set relativenumber  " Show line numbers
@@ -51,7 +50,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'pair://github.com/jiangmiao/auto-pairs.git'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -61,6 +60,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'edkolev/tmuxline.vim'
 call vundle#end()
 filetype plugin indent on
 
