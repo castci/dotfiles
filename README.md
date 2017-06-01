@@ -4,5 +4,5 @@ For Vim follow next repository to install vundle:
 ## Tmux
 For set caps lock as prefix en tmux follow next url:
 [superuser.com](https://superuser.com/questions/1142577/bind-caps-lock-key-to-tmux-prefix-on-macos-sierra)
-##Fish 
+## Fish 
 The easiest way to install themes for fish is with [omf](https://github.com/oh-my-fish/oh-my-fish)
