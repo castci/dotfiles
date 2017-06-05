@@ -124,3 +124,16 @@ endif
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+
+" Tmuxline
+let g:airline#extensions#tmuxline#enabled = 0
+" let g:tmuxline_preset = {
+"       \'a'    : '#{?client_prefix,#[reverse]<Prefix>#[noreverse] ,}#S',
+"       \'win'    : ['#I', '#W'],
+"       \'cwin'    : ['#I', '#W'],
+"       \'x' : '♫ #{spotify_status} #{spotify_artist}: #{spotify_track}', 
+"       \'y'    : ['%a, %b %d'],
+"       \'z'    : '%R',
+"       \'options' : {
+"       \'status-justify': 'left'}
+"       \}
