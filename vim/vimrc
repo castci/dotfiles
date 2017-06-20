@@ -28,8 +28,8 @@ map <leader>cp <c-_>p
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['javascript'] = 'javascript, javascript-mocha'
-imap ss <esc>a<Plug>snipMateNextOrTrigger
-smap ss <Plug>snipMateNextOrTrigger
+imap <leader><leader> <esc>a<Plug>snipMateNextOrTrigger
+smap <leader><leader> <Plug>snipMateNextOrTrigger
 
 "Move lines
 nnoremap ∆ :m .+1<CR>==
