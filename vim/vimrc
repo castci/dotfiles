@@ -61,6 +61,7 @@ Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'chr4/nginx.vim'
 call vundle#end()
 filetype plugin indent on
 
