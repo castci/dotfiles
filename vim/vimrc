@@ -24,6 +24,7 @@ nmap <CR> G
 "Comment with leader
 map <leader>cc <c-_><c-_>
 map <leader>cp <c-_>p
+map <leader>cb <c-_>b
 
 "For Snippets
 let g:snipMate = {}
@@ -63,6 +64,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'chr4/nginx.vim'
+Plugin 'tomtom/tcomment_vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -79,7 +81,6 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
 
 "This is for nerd tree
 let NERDTreeQuitOnOpen = 1
@@ -115,7 +116,7 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 
 "ag
-if executable('ag') 
+if executable('ag')
     " Note we extract the column as well as the file and line number
     set grepprg=ag\ --nogroup\ --nocolor\ --column
     set grepformat=%f:%l:%c%m
@@ -133,7 +134,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 "       \'a'    : '#{?client_prefix,#[reverse]<Prefix>#[noreverse] ,}#S',
 "       \'win'    : ['#I', '#W'],
 "       \'cwin'    : ['#I', '#W'],
-"       \'x' : '♫ #{spotify_status} #{spotify_artist}: #{spotify_track}', 
+"       \'x' : '♫ #{spotify_status} #{spotify_artist}: #{spotify_track}'
 "       \'y'    : ['%a, %b %d'],
 "       \'z'    : '%R',
 "       \'options' : {
