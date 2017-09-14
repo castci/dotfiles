@@ -9,12 +9,11 @@ set visualbell      " Use visual bell (no beeping)
 set hlsearch        " Highlight all search results
 set smartcase       " Enable smart-case search
 set incsearch       " Searches for strings incrementally
-set autoindent      " Auto-indent new lines
 set expandtab       " Use spaces instead of tabs
-set shiftwidth=4    " Number of auto-indent spaces
+set shiftwidth=2    " Number of auto-indent spaces
+set softtabstop=2   " Number of spaces per Tab
 set smartindent     " Enable smart-indent
-set smarttab        " Enable smart-tabs
-set softtabstop=4   " Number of spaces per Tab
+set autoindent      " Auto-indent new lines
 set undolevels=1000 " Number of undo leves
 set backspace=indent,eol,start
 
@@ -65,11 +64,15 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'chr4/nginx.vim'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'mxw/vim-jsx'
 call vundle#end()
 filetype plugin indent on
 
 syntax on         " Syntax highlight
 color dracula     " Select color theme
+
+"for react
+let g:jsx_ext_required = 0
 
 "this is for airline
 let g:airline#extensions#tabline#enabled = 1
@@ -130,13 +133,3 @@ set completeopt-=preview
 
 " Tmuxline
 let g:airline#extensions#tmuxline#enabled = 0
-" let g:tmuxline_preset = {
-"       \'a'    : '#{?client_prefix,#[reverse]<Prefix>#[noreverse] ,}#S',
-"       \'win'    : ['#I', '#W'],
-"       \'cwin'    : ['#I', '#W'],
-"       \'x' : '♫ #{spotify_status} #{spotify_artist}: #{spotify_track}'
-"       \'y'    : ['%a, %b %d'],
-"       \'z'    : '%R',
-"       \'options' : {
-"       \'status-justify': 'left'}
-"       \}
