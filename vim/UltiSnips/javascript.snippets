@@ -1,49 +1,71 @@
-#Debugging
-snippet cl "console.log" b
-console.log($0)
+# Debugging
+snippet cl "console.log(...)" b
+console.log($0);
 endsnippet
 
-snippet ci "console.info" b
-console.info($0)
+snippet ci "console.info(...)" b
+console.info($0);
 endsnippet
 
-snippet ce "console.error" b
-console.error($0)
+snippet ce "console.error(...)" b
+console.error($0);
 endsnippet
-#ES6
-snippet gfn "Generator function"
-function* ${1:name}(${2}) {
-        yield ${3};
+
+snippet if "if (condition) { ...  }"
+if (${1:true}) {
+  ${VISUAL}$0
 }
 endsnippet
 
-snippet => "Arrow function" i
-(${1}) => {
-        ${2}
+snippet ife "if (condition) { ...  } else { ...  }"
+if (${0:true}) {
+  ${VISUAL}$1
+} else {
+  ${2}
 }
 endsnippet
 
-snippet class "Class"
-class ${1:name} {
-        constructor(${2:arg}) {
-                ${3:// init}
-        }
-        ${4}
+snippet switch "switch"
+switch (${VISUAL}${1:expression}) {
+  case '${VISUAL}${3:case}':
+    ${4}
+    break;
+      ${0}
+  default:
+    ${2}
 }
 endsnippet
 
-snippet forof "for ( value of object )"
-for (let ${1:s} of ${2:sequence}) {
-        ${3}
+snippet case "case 'xyz': ... break"
+case '${VISUAL}${1:case}':
+${VISUAL}$0
+break;
+endsnippet
+
+snippet do "do { ...  } while (condition)"
+do {
+  ${VISUAL}$0
+}(${1:/* condition */})
+endsnippet
+
+snippet fun "function foo() {}"
+function ${1}(${2}) {
+  ${VISUAL}$0
 }
 endsnippet
 
-snippet im "import"
-import ${1:foo} from '${2:bar}'
+snippet tc "try cath"
+try {
+  ${1}
+} catch (error) {
+  ${VISUAL}$0
+}
 endsnippet
 
-# Export
-snippet ex
-export ${1:default} ${2:bar}
+snippet ret "Return statement"
+return ${VISUAL}$0;
 endsnippet
 
+snippet us
+'use strict';
+endsnippet

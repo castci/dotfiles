@@ -16,7 +16,9 @@ set visualbell
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chr4/nginx.vim'
 Plugin 'dracula/vim'
@@ -34,7 +36,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 call vundle#end()
 
 set rtp+=/usr/local/opt/fzf
