@@ -1,17 +1,17 @@
-Version": 6,
+{
+  "Version": 6,
   "libs": [
-    "browser"
-  ],
-  "loadEagerly": [
-    "path/to/your/js/**/*.js"
+    "browser",
+    "jquery",
+    "react"
   ],
   "dontLoad": [
-    "node_modules/**",
-    "path/to/your/js/**/*.js"
+    "node_modules/**"
   ],
   "plugins": {
-    "es_modules": {},
     "node": {},
+    "es_modules": {},
+    "angular": {},
     "doc_comment": {
       "fullDocs": true,
       "strong": true
