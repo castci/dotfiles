@@ -1,11 +1,37 @@
-# Generator function
+snippet con "Constant"
+const ${1} = ${VISUAL}$0;
+endsnippet
+
+snippet let "let"
+let ${1} = ${VISUAL}$0;
+endsnippet
+
+snippet the "then( response => {}, error => {} )"
+${VISUAL}$0then(
+  response => {
+    ${1}
+  },
+  error => {
+    ${2}
+  }
+);
+endsnippet
+
+snippet cat "catch( error => {} )"
+${VISUAL}$0catch(
+  error => {
+    ${1}
+  }
+);
+endsnippet
+
 snippet gfn "Generator function fun*"
 function* ${1:name}(${2}) {
   yield ${3};
 }
 endsnippet
 
-snippet af "Arrow function" 
+snippet af "Arrow function"
 (${1}) => {
   ${VISUAL}$0
 }
@@ -21,7 +47,7 @@ class ${1:name} {
 endsnippet
 
 snippet forof "forof"
-for (let ${1:s} of ${2:sequence}) {
+for (let ${1:value} of ${2:object}) {
   ${3}
 }
 endsnippet
