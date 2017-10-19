@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible
 set autoindent
 set backspace=indent,eol,start
@@ -25,7 +26,7 @@ Plugin 'dracula/vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plugin 'marijnh/tern_for_vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
@@ -36,18 +37,22 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'junegunn/fzf.vim'
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 set rtp+=/usr/local/opt/fzf
-nnoremap <C-f> :FZF<CR>
+set rtp+=~/.fzf
+nmap <C-s> :Buffers<CR>
+nmap <C-r> :Tags<CR>
+nmap <C-f> :Files<CR>
+nmap <C-a> :Ag<CR>
 
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%f:%l:%c%m
-    nnoremap ff :Ag<SPACE>
-endif
+let g:ackprg = 'ag --vimgrep'
+nnoremap ff :Ack!<SPACE>
+nmap cf :Ack! '\b<cword>\b' <CR>
 
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 3
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
