@@ -44,9 +44,8 @@ call vundle#end()
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 nmap <C-s> :Buffers<CR>
-nmap <C-r> :Tags<CR>
+nmap <C-a> :Tags<CR>
 nmap <C-f> :Files<CR>
-nmap <C-a> :Ag<CR>
 
 let g:ackprg = 'ag --vimgrep'
 nnoremap ff :Ack!<SPACE>
