@@ -1,0 +1,86 @@
+set shell=/bin/bash
+set autoindent
+set backspace=indent,eol,start
+set expandtab
+set hlsearch
+set incsearch
+set laststatus=2
+set nocompatible
+set nowrap
+set number
+set relativenumber
+set rtp+=~/.vim/bundle/Vundle.vim
+set showmatch
+set smartcase
+set undolevels=1000
+
+filetype plugin indent on
+syntax on
+color wallaby
+let mapleader="'"
+" Show extension file
+let g:airline#extensions#tmuxline#enabled = 0
+
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'chr4/nginx.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'junegunn/fzf.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+call vundle#end()
+
+" Move between buffers
+nnoremap <silent> <leader>p :bp<CR>
+nnoremap <silent> <leader>n :bn<CR>
+nnoremap <silent> <leader>x :bd<CR>
+
+" unfocus
+nnoremap <silent> <leader>no :noh<CR>
+
+" Search Files
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>s :Files <C-r>=expand("%:h")<CR>/<CR>
+
+" Search words
+let g:ackprg = 'ag --vimgrep'
+nnoremap ff :Ack!<SPACE>
+
+" Move lines
+nnoremap <leader>k :m-2<CR>==
+nnoremap <leader>j :m+<CR>==
+
+" NerdTree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeWinSize=50
+autocmd StdinReadPre * let s:std_in=1
+nnoremap <silent> <C-t> :call NERDTreeToggleInCurDir()<CR>
+function! NERDTreeToggleInCurDir()
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        NERDTreeToggle
+    else
+        NERDTreeFind
+    endif
+endfunction
+"
+" Comment with leader
+map <leader>cc <c-_><c-_>
+map <leader>cb <c-_>b
+
+" Airline
+let g:airline#extensions#tabline#enabled = 3
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1

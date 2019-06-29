@@ -1,4 +1,5 @@
 set -e fish_greeting
+set -gx  LC_ALL en_US.UTF-8
 
 alias develop='cd ~/Documents/develop'
 alias gofish='cd ~/.config/fish'
