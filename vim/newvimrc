@@ -28,18 +28,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'chr4/nginx.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mileszs/ack.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'neoclide/coc.nvim'
 Plugin 'othree/yajs.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 call vundle#end()
 
 " For react
@@ -56,6 +57,8 @@ nnoremap <silent> <leader>no :noh<CR>
 " Search Files
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>s :Files <C-r>=expand("%:h")<CR>/<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>h :History<CR>
 
 " Search words
 let g:ackprg = 'ag --vimgrep'
