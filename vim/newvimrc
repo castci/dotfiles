@@ -29,10 +29,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'chr4/nginx.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'mxw/vim-jsx'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf.vim'
 Plugin 'othree/yajs.vim'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
@@ -41,6 +41,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
+
+" For react
+let g:vim_jsx_pretty_colorful_config = 1
 
 " Move between buffers
 nnoremap <silent> <leader>p :bp<CR>
