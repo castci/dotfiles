@@ -18,8 +18,12 @@ filetype plugin indent on
 syntax on
 color wallaby
 let mapleader="'"
+let g:polyglot_disabled = ['json']
 " Show extension file
 let g:airline#extensions#tmuxline#enabled = 0
+
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=
 
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
