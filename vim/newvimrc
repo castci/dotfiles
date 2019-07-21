@@ -1,9 +1,12 @@
 set shell=/bin/bash
 set autoindent
 set backspace=indent,eol,start
+set backupdir=~/.vim/tmp/
+set directory=~/.vim/tmp/
 set expandtab
 set hlsearch
 set incsearch
+set ignorecase
 set laststatus=2
 set nocompatible
 set nowrap
@@ -19,11 +22,20 @@ syntax on
 color wallaby
 let mapleader="'"
 let g:polyglot_disabled = ['json']
+
 " Show extension file
 let g:airline#extensions#tmuxline#enabled = 0
+let g:mustache_abbreviations = 1
 
+" Remove beep
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
+
+" Add support for hbs files
+autocmd BufRead,BufNewFile *.hbs set filetype=mustache
+"
+" Add support for hbs files
+autocmd BufRead,BufNewFile *.conf set filetype=nginx
 
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
@@ -35,10 +47,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'neoclide/coc.nvim'
-Plugin 'othree/yajs.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
@@ -93,3 +105,8 @@ map <leader>cb <c-_>b
 let g:airline#extensions#tabline#enabled = 3
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
+
+" coc Snipet
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+

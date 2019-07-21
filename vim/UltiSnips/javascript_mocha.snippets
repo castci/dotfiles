@@ -1,0 +1,36 @@
+snippet des "describe('foo', ()=>{});"
+describe('${1: describe}', () => {
+    ${VISUAL}$0
+
+    });
+endsnippet
+
+snippet it "it('should ...' ()=>{});"
+it('should ${1}', () => {
+    ${VISUAL}$0
+
+    });
+endsnippet
+
+snippet befe "beforeEach();"
+beforeEach(${VISUAL}$0);
+endsnippet
+
+snippet afe "afterEach();"
+afterEach(() => {
+    ${VISAUL}$0
+
+    });
+endsnippet
+
+snippet exp "expect(). ...;"
+expect(${1}).${VISUAL}$0;
+endsnippet
+
+snippet ass "assert('assertion');"
+assert(${VISUAL}${0});
+endsnippet
+
+snippet stu "sandbox.stub(func, 'method').returns()"
+sandbox.stub(${1:func}, '${2:method}').returns(${VISUAL}${0});
+endsnippet
