@@ -1,11 +1,14 @@
 set -e fish_greeting
 set -gx  LC_ALL en_US.UTF-8
+set -U fish_user_paths /Users/icastaneda/.lc2/bin $fish_user_paths
 
 alias develop='cd ~/Documents/develop'
+alias notes='cd ~/Documents/notes'
 alias gofish='cd ~/.config/fish'
 alias govim='cd ~/.vim'
 alias gonginx='cd /usr/local/etc/nginx'
 alias g='git'
+alias gfo='git fetch origin'
 alias gst='git status'
 alias gd='git diff'
 alias gl='git pull'
@@ -26,3 +29,6 @@ alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias gco='git checkout'
 alias gcm='git checkout master'
+alias gbd= 'git branch | gb | grep -v "master" | xargs git branch -D'
+alias tmx='sh ~/.tmux/tmux-start.sh'
+fish_add_path /usr/local/sbin

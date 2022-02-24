@@ -1,4 +1,4 @@
-set shell=/bin/bash
+set shell=/usr/local/bin/fish
 set autoindent
 set backspace=indent,eol,start
 set backupdir=~/.vim/tmp/
@@ -19,7 +19,7 @@ set undolevels=1000
 
 filetype plugin indent on
 syntax on
-color wallaby
+colorscheme nord
 let mapleader="'"
 let g:polyglot_disabled = ['json']
 
@@ -43,19 +43,23 @@ set rtp+=~/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'neoclide/coc.nvim'
+Plugin 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
 Plugin 'sheerun/vim-polyglot'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vimwiki/vimwiki'
+Plugin 'eliba2/vim-node-inspect'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " For react
@@ -102,11 +106,32 @@ map <leader>cc <c-_><c-_>
 map <leader>cb <c-_>b
 
 " Airline
-let g:airline#extensions#tabline#enabled = 3
-let g:airline_theme='wombat'
+let g:airline_theme='night_owl'
 let g:airline_powerline_fonts = 1
 
 " coc Snipet
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
+" prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \]
+
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
