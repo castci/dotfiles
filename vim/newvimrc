@@ -23,9 +23,9 @@ colorscheme nord
 let mapleader="'"
 let g:polyglot_disabled = ['json']
 
-" Show extension file
-let g:airline#extensions#tmuxline#enabled = 0
-let g:mustache_abbreviations = 1
+" " Show extension file
+" let g:airline#extensions#tmuxline#enabled = 0
+" let g:mustache_abbreviations = 1
 
 " Remove beep
 set noeb vb t_vb=
@@ -45,6 +45,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
@@ -74,8 +75,8 @@ nnoremap <silent> <leader>x :bd<CR>
 nnoremap <silent> <leader>no :noh<CR>
 
 " Search Files
-nnoremap <silent> <leader>f :GFiles<CR>
-nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <leader>f :GFiles<Cr>
+nnoremap <silent> <C-f> :Files<Cr>
 nnoremap <silent> <leader>s :Files <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>h :History<CR>
@@ -109,9 +110,9 @@ map <leader>cb <c-_>b
 let g:airline_theme='night_owl'
 let g:airline_powerline_fonts = 1
 
-" coc Snipet
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
+" coc Snipet Esto choca con el resize de tmux
+" let g:coc_snippet_next = '<c-j>'
+" let g:coc_snippet_prev = '<c-k>'
 " prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " coc config

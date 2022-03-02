@@ -29,6 +29,6 @@ alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias gco='git checkout'
 alias gcm='git checkout master'
-alias gbd= 'git branch | gb | grep -v "master" | xargs git branch -D'
+alias gbd='git branch | gb | grep -v "master" | xargs git branch -D'
 alias tmx='sh ~/.tmux/tmux-start.sh'
 fish_add_path /usr/local/sbin
